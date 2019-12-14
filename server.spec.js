@@ -36,4 +36,10 @@ describe('GET /user', function() {
       .get('/321321')
       .expect(500, done);
   });
+
+  it('root is just hello', function(done) {
+    request(app)
+      .get('/')
+      .expect(200, done);
+  });
 });

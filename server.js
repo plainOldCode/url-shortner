@@ -12,7 +12,6 @@ app.post('/', function(req, res) {
 
 app.get('/*', function(req, res) {
   if (req.path === '/') return res.send('hello');
-  console.log('req.path', req.path);
   const targetURL = shorten.getTargetURL(req.path);
   res.redirect(301, targetURL);
 });
