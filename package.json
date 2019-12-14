@@ -2,7 +2,7 @@
   "name": "url-shortner",
   "version": "0.0.1",
   "description": "url-shortner practice",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest --detectOpenHandles"
   },

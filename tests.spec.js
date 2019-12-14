@@ -11,6 +11,19 @@ describe('GET /user', function() {
     server.close(done);
   });
 
+  it('make url shorten', function(done) {
+    request(app)
+      .post('/')
+      .send({targetURL: 'JoshMatz'})
+      .expect(
+        200,
+        {
+          url: 'JoshMatz',
+        },
+        done,
+      );
+  });
+
   it('responds with json', function(done) {
     request(app)
       .get('/')
