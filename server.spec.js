@@ -1,5 +1,6 @@
 let app, server;
 const request = require('supertest');
+const AppAddress = 'http://localhost';
 
 describe('GET /user', function() {
   beforeAll(done => {
@@ -14,20 +15,25 @@ describe('GET /user', function() {
   it('make url shorten', function(done) {
     request(app)
       .post('/')
-      .send({targetURL: 'JoshMatz'})
+      .send({targetURL: 'https://google.com'})
       .expect(
         200,
         {
-          url: 'JoshMatz',
+          url: `${AppAddress}/0`,
         },
         done,
       );
   });
 
-  it('responds with json', function(done) {
+  it('get target url from shorten', function(done) {
     request(app)
-      .get('/')
-      .expect('Content-Type', /json/)
-      .expect(200, done);
+      .get('/0')
+      .expect(301, done);
+  });
+
+  it('not exist url from shorten', function(done) {
+    request(app)
+      .get('/321321')
+      .expect(500, done);
   });
 });
