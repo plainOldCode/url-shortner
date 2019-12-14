@@ -20,7 +20,8 @@ describe('Shorten function', function() {
     try {
       shorten.setTargetURL(targetURL);
     } catch (e) {
-      expect(e.message).toBe('Already exsit');
+      expect(e.message).toBe('Already exist');
+      expect(shorten.getShortenURL(targetURL)).toBe(firstShortenURL);
     }
     done();
   });

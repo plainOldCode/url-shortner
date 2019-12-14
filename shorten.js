@@ -7,9 +7,13 @@ class Shorten {
 
   setTargetURL(targetURL) {
     if (this.persistence.checkExistURL(targetURL)) {
-      throw Error('Already exsit');
+      throw Error('Already exist');
     }
     return this.persistence.saveURL(targetURL);
+  }
+
+  getShortenURL(targetURL) {
+    return this.persistence.getExistShortenURL(targetURL);
   }
 
   getTargetURL(shortenURL) {

@@ -15,6 +15,7 @@ describe('Persistence test', function() {
     const shortenURL = persistence.saveURL(testURLString);
     expect(persistence.checkExistURL(testURLString)).toBe(true);
     expect(persistence.loadURL(shortenURL)).toBe(testURLString);
+    expect(persistence.getExistShortenURL(testURLString)).toBe(shortenURL);
     done();
   });
 

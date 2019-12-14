@@ -12,14 +12,18 @@ class Persistence {
   saveURL(url) {
     const hashedURL = uuidv5(url, uuidv5.URL);
     const shortenURL = this._getShorten();
-    this.targetSpace[hashedURL] = {targetURL: url, shorten: shortenURL};
-    this.shortenSpace[shortenURL] = {targetURL: url, hashedURL: hashedURL};
+    this.targetSpace[hashedURL] = {targetURL: url, shortenURL};
+    this.shortenSpace[shortenURL] = {targetURL: url, hashedURL};
     return shortenURL;
   }
   checkExistURL(url) {
     const hashedURL = uuidv5(url, uuidv5.URL);
     if (this.targetSpace[hashedURL]) return true;
     return false;
+  }
+  getExistShortenURL(url) {
+    const hashedURL = uuidv5(url, uuidv5.URL);
+    return this.targetSpace[hashedURL].shortenURL;
   }
   loadURL(shortenURL) {
     return this.shortenSpace[shortenURL].targetURL;

@@ -14,12 +14,25 @@ describe('GET /user', function() {
 
   it('make url shorten', function(done) {
     request(app)
-      .post('/')
-      .send({targetURL: 'https://google.com'})
+      .post('/?url=https://google.com')
       .expect(
         200,
         {
-          url: `${AppAddress}/0`,
+          shortenURL: `${AppAddress}/0`,
+          message: 'First enrolled',
+        },
+        done,
+      );
+  });
+
+  it('make url shorten again', function(done) {
+    request(app)
+      .post('/?url=https://google.com')
+      .expect(
+        200,
+        {
+          shortenURL: `${AppAddress}/0`,
+          message: 'Already exist',
         },
         done,
       );
