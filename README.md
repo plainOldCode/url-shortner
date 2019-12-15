@@ -13,6 +13,8 @@ npm test
 npm run start
 
 # Run with docker
+docker, docker-compose 가 설치되어 있어야 합니다.
+
 npm run compose
 
 # API Docuemnts
