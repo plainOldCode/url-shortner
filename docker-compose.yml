@@ -1,0 +1,10 @@
+version: "3"  # Version of YAML file format 
+
+services:
+  url-shortener:            
+    build: .      # Build image from root directory
+    volumes:               # For executing live code change
+      - .:/app
+    ports:                 # Expose host port 3000
+      - 3000:3000           
+
