@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --detectOpenHandles",
-    "start": "node index.js"
+    "start": "node index.js",
+    "compose": "docker-compose down && docker-compose up",
+    "compose-down": "docker-compose down"
   },
   "author": "",
   "license": "ISC",
