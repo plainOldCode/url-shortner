@@ -19,3 +19,6 @@ npm run compose
 
 # API Documents
 https://make-url-short-again.herokuapp.com/api-docs
+
+# Architecture
+https://www.evernote.com/shard/s23/sh/44421050-e236-454a-88f5-12cce8e93ee5/5783c1b73890be646a21533cbce022ba
