@@ -6,5 +6,5 @@ services:
     volumes:               # For executing live code change
       - .:/app
     ports:                 # Expose host port 3000
-      - 3000:80          
+      - 3000:3000
 
