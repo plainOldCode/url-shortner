@@ -1,5 +1,5 @@
 # url-shortner
-make short url again
+make url short again
 
 # Install
 node version 10 이상을 권장합니다.
